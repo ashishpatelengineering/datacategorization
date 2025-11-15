@@ -69,13 +69,22 @@ if uploaded_file:
         categorized_df = pd.read_csv(StringIO(st.session_state["categorized_csv_text"]))
         st.subheader(":orange[Categorized CSV Result]")
         st.dataframe(categorized_df)
+        
+        # Editable category column
+        st.subheader(":orange[Review & Refine Your Categorized Data]")
+        edited_df = st.data_editor(
+            categorized_df,
+            num_rows="dynamic",
+            disabled=[col for col in categorized_df.columns if col != "Category"]
+        )
 
         # Dynamic download filename
         download_filename = f"categorized_{uploaded_file.name}"
 
         st.download_button(
             label="Download Categorized CSV",
-            data=st.session_state["categorized_csv_text"],
+            data=edited_df.to_csv(index=False),
+            # data=st.session_state["categorized_csv_text"],
             file_name=download_filename,
             mime="text/csv"
         )

@@ -6,17 +6,15 @@ classifying each row.
 
 OUTPUT RULES:
 1. Output exactly 6 lines.
-2. The first 5 lines must be category names.
-3. Each category name must consist of a single word.
-4. The 6th line must be exactly: Unknown
-5. One category per line. No commas, bullets, or numbering.
-6. No explanations or comments.
-7. No repeated categories.
-8. No markdown or formatting.
-9. No quotes.
-10. Categories must be broad and general.
-11. Categories must reflect patterns in the CSV.
-12. Return only the 6 category lines.
+2. Lines 1 to 5 must be category names.
+3. Each category name must be a single word.
+4. Categories must be broad, high-level, and directly supported by patterns in the CSV.
+5. Categories must avoid overly specific or narrow terminology.
+6. Do not repeat any category.
+7. Line 6 must be exactly: Unknown
+8. Output one category per line with no commas, bullets, numbering, quotes, or formatting.
+9. Provide no explanations or commentary.
+10. Output only the 6 category lines.
 
 CSV DATA:
 {csv_text}

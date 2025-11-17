@@ -64,9 +64,9 @@ def assign_categories(df: pd.DataFrame, categories: list) -> str:
 
 st.write(
     """
-Easily categorize your CSV data using AI.
-Upload your CSV, edit suggested categories,
-and let the AI categorize each row.
+Efficiently categorize your CSV data with AI.
+Upload your file, review the suggested categories,
+adjust them as needed, and let the system assign categories to each row.
 """
 )
 
@@ -131,3 +131,4 @@ if uploaded_file:
                 )
             except Exception as e:
                 st.error(f"Error displaying categorized CSV: {e}")
+
